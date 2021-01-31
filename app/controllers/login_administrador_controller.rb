@@ -1,6 +1,6 @@
 class LoginAdministradorController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :logar
-
+  layout "login"
   def login
   end
 
