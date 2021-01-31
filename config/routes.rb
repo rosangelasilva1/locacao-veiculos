@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :administradors
   resources :reservas
   resources :clientes
   root "veiculos#index"
