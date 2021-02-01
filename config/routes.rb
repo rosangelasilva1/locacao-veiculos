@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post '/administrador/logar', to:'login_administrador#logar'  
   get '/administrador/logout', to:'login_administrador#logout'
   resources :administradors
-  resources :reservas
+  resources :reservas, only: [:index, :show,]
   resources :clientes
   root "veiculos#index"
   resources :veiculos

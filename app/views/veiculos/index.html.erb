@@ -29,7 +29,7 @@
             <td><%= veiculo.qtde_passageiros %></td>
             <td><%= veiculo.placa %></td>
             <td><%= veiculo.valor %></td>
-            <td><%= veiculo.marca %></td>
+            <td><%= veiculo.marca.nome %></td>
             <td><%= link_to 'Show', veiculo %></td>
         <td><%= link_to 'Edit', edit_veiculo_path(veiculo) %></td>
         <td><%= link_to 'Destroy', veiculo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
