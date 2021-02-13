@@ -4,7 +4,6 @@ class LoginAdministradorController < ApplicationController
   def login
   end
 
-
   def logar
     administrador = Administrador.login(params[:login],params[:senha])
     if administrador.present?
@@ -14,10 +13,7 @@ class LoginAdministradorController < ApplicationController
   end
 
   def logout
-    
-      cookies[:administrador] = nil
-      redirect_to '/administrador/login'
-    
-
+    cookies[:administrador] = nil
+    redirect_to '/administrador/login'
   end 
 end
