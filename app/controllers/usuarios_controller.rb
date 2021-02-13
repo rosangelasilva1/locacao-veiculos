@@ -22,7 +22,7 @@ class UsuariosController < ApplicationController
     @usuario = Usuario.new(usuario_params)
     respond_to do |format|
       if @usuario.save
-        cookies:[usuario]= @usuario.id
+        cookies[:usuario]= @usuario.id
         format.html { redirect_to "/", notice: "Usuario was successfully created." }
         format.json { render :show, status: :created, location: @usuario }
       else

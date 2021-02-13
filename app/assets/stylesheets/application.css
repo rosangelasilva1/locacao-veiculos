@@ -19,3 +19,10 @@
      margin: auto;
 
  }
+
+ .imgCarros{
+     max-height: 250px;
+     display:block;
+     margin: auto;
+     width: auto;
+ }
