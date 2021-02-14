@@ -1,0 +1,36 @@
+  
+<form method="post" action="/logar" class="form-signin loginForm">
+  
+  <h1 class="h3 mb-3 font-weight-normal">Loja - Logue-se Agora </h1>
+
+  <div class="form-label-group">
+    <label for="email" >Login:</label>
+    <input type="email" name="login" id="login" class="form-control" placeholder="login" required autofocus>
+  </div>
+  <div class="form-label-group">
+    <label for="senha" >Senha:</label>
+    <input type="password" name="senha" id="senha" class="form-control" placeholder="senha" required>
+  </div>
+
+  <button style="margin-top:10px;" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  
+</form>
+<hr>
+
+<p class="central"> OU </p>
+
+<div class="container central">
+  <a class = "btn btn-success"href="/usuarios/new"> Cadastre-se</a>
+</div>
+<style>
+  .loginForm{
+    max-width:450px;
+    margin:auto
+  }
+
+  .central{
+   text-align:center;
+   width:100%;
+   display:block;
+  }
+</style>

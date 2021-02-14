@@ -23,7 +23,7 @@ class UsuariosController < ApplicationController
     respond_to do |format|
       if @usuario.save
         cookies[:usuario]= @usuario.id
-        format.html { redirect_to "/", notice: "Usuario was successfully created." }
+        format.html { redirect_to "/", notice: "Usuario foi cadastrado com sucesso." }
         format.json { render :show, status: :created, location: @usuario }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,7 +36,7 @@ class UsuariosController < ApplicationController
   def update
     respond_to do |format|
       if @usuario.update(usuario_params)
-        format.html { redirect_to @usuario, notice: "Usuario was successfully updated." }
+        format.html { redirect_to @usuario, notice: "Usuario foi atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @usuario }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -49,7 +49,7 @@ class UsuariosController < ApplicationController
   def destroy
     @usuario.destroy
     respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: "Usuario was successfully destroyed." }
+      format.html { redirect_to usuarios_url, notice: "Usuario foi excluído com sucesso." }
       format.json { head :no_content }
     end
   end
@@ -62,6 +62,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :cpf, :endereco, :numero, :bairro, :cep, :estado)
+      params.require(:usuario).permit(:nome, :cpf, :endereco, :numero, :bairro, :cep, :estado, :login, :senha)
     end
 end
