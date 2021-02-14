@@ -54,7 +54,23 @@
                   <a href="#"><%=veiculo.nome%></a>
                 </h4>
                 <h5><%=number_to_currency(veiculo.valor)%></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <div class='detalhesVeiculos'>
+                  <div class='detalheVeiculoContainer'>
+                  </div>
+                  <div class='detalheVeiculoContainer'>
+                  <p class="card-text"> Cor</p>
+                    <p><%=veiculo.cor%></p>
+                  </div>
+
+                  <div class='detalheVeiculoContainer'>
+                  <p class="card-text">Qtde Passageiros</p>
+                    <p><%=veiculo.qtde_passageiros%></p>
+                  </div>
+                  <div class='detalheVeiculoContainer'>
+                  <p class="card-text">Marca</p>
+                    <p><%=veiculo.marca.nome%></p>
+                  </div>
+                </div>
               </div>
               <div class="card-footer">
                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

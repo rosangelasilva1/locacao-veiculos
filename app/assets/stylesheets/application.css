@@ -26,3 +26,27 @@
      margin: auto;
      width: auto;
  }
+
+ .detalhesVeiculos{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     border: 1px solid #ccc;
+     padding: 15px;
+     align-items: center;
+
+ }
+
+ .detalhesVeiculos .detalheVeiculoContainer{
+     text-align: center;
+     font-size: 1.8m;
+ }
+ .detalhesVeiculos .detalheVeiculoContainer .card-text{
+     font-weight: bold;
+     
+ }
+
+ #navbaResponsive li{
+     margin-right: 50px;
+
+ }
