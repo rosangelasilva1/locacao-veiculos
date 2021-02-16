@@ -71,7 +71,7 @@
                     </dd>
                     <dt>Valor Total</dt>
                     <dd>
-                        <p id='valorTotal'><%=number_to_currency(@veiculo.valor)%></p>
+                        <p id='valorTotal'><%=number_to_currency(@valor_total)%></p>
                     </dd>
                 </dl> 
                 <input type="submit" value="Aluguel" class='btn btn-success' style='margin:auto;display:block;padding:9px 32px;font-size:1.2em;'>
@@ -84,7 +84,7 @@
 <script>
     function atualizaTotal(valorVeiculo){
         const qtdeDias=document.getElementById('dias').value;
-        document.getElementById('valorTotal').innerText = partInt(qtdeDias) * valorVeiculo;
+        document.getElementById('valorTotal').innerText = parseInt(qtdeDias) * valorVeiculo;
     }
 </script>
 <style>
