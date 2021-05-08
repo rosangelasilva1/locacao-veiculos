@@ -1,83 +1,85 @@
 <div class='container'>
     <div class = 'row'>
-        <div class='col-lg-7  itemLista'>
-            <div class='col-lg-4'>
-                <p style='text-align:center;font-weight:bold;font-size:1.5em;' ><%=@veiculo.nome%></p>
-                <img src='https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/04-images/novo-onix-branco-summit.png?imwidth=960' style='max-width:100%;'>
-            </div>
-        
-            <!-- Div detalhesContainer-->
-            <div class='col-lg-6 detalhesContainer'>
-                <div class='detalhesVeiculo'>
-                    <p class="card-text"> Quant.Passageiros</p>
-                    <p><%=@veiculo.qtde_passageiros%></p>
-                </div>
-
-                <div class='detalhesVeiculo'>
-                    <p class="card-text"> Marca</p>
-                    <p><%=@veiculo.marca.nome%></p>
-                </div>
-                <div class='detalhesVeiculo'>
-                    <p class="card-text"> Cor</p>
-                    <p><%=@veiculo.cor%></p>
-                </div>
-            </div>
-            <!-- Div ofertasInfo-->
-            <div class='col-lg-6 ofertasInfo'>
-                <h4>Incluso no Preço:</h4>
-                <div class='row'>
-                    <div class='col-sm-12'>
-                        <div class='row'>
-
-                            <div class='col-lg-7'>
-                                <p>Melhor Preço garantido</p>
-                            </div>
-
-                            <div class='col-lg-7'>
-                                <p>Sem Taxa de Alteração</p>
-                            </div>
-
+        <form action='/alugar/<%=@veiculo.id%>' method='POST'> 
+            <div class = 'row'>
+                <div class='col-lg-7  itemLista'>
+                    
+                    <div class='col-lg-4'>
+                        <p style='text-align:center;font-weight:bold;font-size:1.5em;' ><%=@veiculo.nome%></p>
+                        <img src='https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/04-images/novo-onix-branco-summit.png?imwidth=960' style='max-width:100%;'>
+                    </div>
+                
+                    <!-- Div detalhesContainer-->
+                    <div class='col-lg-6 detalhesContainer'>
+                        <div class='detalhesVeiculo'>
+                            <p class="card-text"> Quant.Passageiros</p>
+                            <p><%=@veiculo.qtde_passageiros%></p>
                         </div>
-                        <div class='row'>
-                            <p>Taxas da Locadora</p>
+
+                        <div class='detalhesVeiculo'>
+                            <p class="card-text"> Marca</p>
+                            <p><%=@veiculo.marca.nome%></p>
+                        </div>
+                        <div class='detalhesVeiculo'>
+                            <p class="card-text"> Cor</p>
+                            <p><%=@veiculo.cor%></p>
                         </div>
                     </div>
-                </div>    
-            </div>
-        </div> 
-        <div class='col-lg-4 pagamentoContainer'>
-            <form acton='/confirmacao_pagamento/<%=@veiculo.id%>' method='POST'> 
-            <div class='col-sm-12'>
-                <div class='row' style='border-bottom:1px solid #fff;'> 
-                    <p style='text-align:center;font-weight:bold;font-size:1.5em;'><%=@veiculo.nome%></p>
+                    <!-- Div ofertasInfo-->
+                    <div class='col-lg-6 ofertasInfo'>
+                        <h4>Incluso no Preço:</h4>
+                        <div class='row'>
+                            <div class='col-sm-12'>
+                                <div class='row'>
+                                    <div class='col-lg-7'>
+                                        <p>Melhor Preço garantido</p>
+                                    </div>
+                                    <div class='col-lg-7'>
+                                        <p>Sem Taxa de Alteração</p>
+                                    </div>
+                                </div>
+                                <div class='row'>
+                                    <p>Taxas da Locadora</p>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
                 </div> 
+                <!-- Div Pagamento botão Aluguel-->
+                <div class='col-lg-4 pagamentoContainer'>
+                    <div class='col-sm-12'>
+                        <div class='row' style='border-bottom:1px solid #fff;'> 
+                            <p style='text-align:center;font-weight:bold;font-size:1.5em;'><%=@veiculo.nome%></p>
+                        </div> 
 
-                <dl class='dl-horizontal' style='text-align:center;'>
-                    <dt>Valor/Dia</dt>
-                    <dd>
-                        <p id='valorDia'><%=number_to_currency(@veiculo.valor)%></p>
-                    </dd>
-                    <dt>Qtde Dias</dt>
-                    <dd>
-                        <select name='dias' id='dias' class='custom-select' style='max-width:90px;' onchange='atualizaTotal(<%=@veiculo.valor%>)'>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                        </select>
-                    </dd>
-                    <dt>Valor Total</dt>
-                    <dd>
-                        <p id='valorTotal'><%=number_to_currency(@valor_total)%></p>
-                    </dd>
-                </dl> 
-                <input type="submit" value="Aluguel" class='btn btn-success' style='margin:auto;display:block;padding:9px 32px;font-size:1.2em;'>
+                        <dl class='dl-horizontal' style='text-align:center;'>
+                            <dt>Valor/Dia</dt>
+                            <dd>
+                                <p id='valorDia'><%=number_to_currency(@veiculo.valor)%></p>
+                            </dd>
+                            <dt>Qtde Dias</dt>
+                            <dd>
+                                <select name='dias' id='dias' class='custom-select' style='max-width:90px;' onchange='atualizaTotal(<%=@veiculo.valor%>)'>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                </select>
+                            </dd>
+                            <dt>Valor Total</dt>
+                            <dd>
+                                <p id='valorTotal'><%=number_to_currency(@valor_total)%></p>
+                            </dd>
+                        </dl> 
+                        <input type="submit" value="Aluguel" class='btn btn-success' style='margin:auto;display:block;padding:9px 32px;font-size:1.2em;'>
+                    </div>
+                
+                </div>
             </div>
-            </form>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -87,17 +89,20 @@
         document.getElementById('valorTotal').innerText = parseInt(qtdeDias) * valorVeiculo;
     }
 </script>
+
 <style>
 .pagamentoContainer{
     background-color:#ccc;
     margin-left:25px;
     padding:15px;
+    height:250px;
 }
 
 .detalhesContainer{
     display:flex;
     justify-content:space-around;
     text-align:center;
+    border-bottom:1px solid #fff;
 }
 
 .detalhesContainer .card-text{
@@ -114,7 +119,7 @@
 .itemLista{
     background-color:#ccc;
     padding:15px;
-    border-bottom:1px solid #000;
+    height:250px;
 }
 
 </style>
